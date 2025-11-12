@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105279257', 'ym');
+
+    ym(105279257, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/105279257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заповедник дикой природы Юго-Восточной Азии</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: #2d5016;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1f3810;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2d5016;
+        }
+        
+        .article-header h2 {
+            font-size: 2.2em;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .article-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 30px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .article-video {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 30px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .rating-section {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 4px solid #2d5016;
+        }
+        
+        .rating-section h3 {
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            color: #2d5016;
+        }
+        
+        .rating-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .rating-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #2d5016;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2d5016;
+            transition: all 0.3s ease;
+        }
+        
+        .rating-btn:hover {
+            background-color: #2d5016;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .rating-btn.selected {
+            background-color: #2d5016;
+            color: white;
+        }
+        
+        .submit-rating {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            background-color: #2d5016;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-rating:hover:not(:disabled) {
+            background-color: #1f3810;
+            transform: translateY(-2px);
+        }
+        
+        .submit-rating:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .thank-you {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .thank-you h2 {
+            font-size: 2em;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .thank-you .emoji {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2d5016;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .article-image, .article-video {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .rating-buttons {
+                gap: 5px;
+            }
+            
+            .rating-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Яндекс Метрика -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(00000000, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Яндекс Метрика -->
+
+    <header>
+        <h1>🌿 Заповедник дикой природы Юго-Восточной Азии</h1>
+        <p>Исследование влияния контента на восприятие научных статей о диких животных</p>
+    </header>
+
+    <div class="container">
+        <!-- HOME PAGE -->
+        <div id="homePage" class="page active">
+            <div class="main-content">
+                <h2>Добро пожаловать в исследование!</h2>
+                <p style="margin-top: 20px; font-size: 1.05em; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Вас просим прочитать две научные статьи о животных нашего заповедника и оценить вашу удовлетворенность контентом по 10-балльной шкале.
+                </p>
+                <p style="margin-top: 15px; font-size: 1.05em; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Исследование займёт не более 10 минут.
+                </p>
+                <button class="btn btn-primary" onclick="goToPage('article1')">Приступить к заданию</button>
+            </div>
+        </div>
+
+        <!-- ARTICLE 1 PAGE -->
+        <div id="article1Page" class="page">
+            <div class="main-content">
+                <div class="article-header">
+                    <h2>Азиатские слоны в дикой природе</h2>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1564349014474-a0f22b5a3f17?w=800&h=500&fit=crop" alt="Азиатский слон" class="article-image">
+
+                <div class="article-content">
+                    <p>Азиатские слоны — величественные создания, которые занимают особое место в экосистеме Юго-Восточной Азии. Эти огромные млекопитающие, вес которых может достигать 5-6 тонн, являются одними из самых интеллектуальных животных на планете. В дикой природе они обитают в тропических лесах, саваннах и горных регионах нескольких азиатских стран, включая Таиланд, Индию, Шри-Ланку и Камбоджу.</p>
+
+                    <p style="margin-top: 15px;">Жизнь азиатских слонов в заповеднике подчиняется строгой социальной иерархии. Стада возглавляют самые старые и опытные самки — матриархи, которые передают знания о местах водопоев и пищи младшему поколению. Этот процесс социализации занимает много лет и критически важен для выживания молодых слонов в дикой природе.</p>
+
+                    <p style="margin-top: 15px;">Ежедневный рацион азиатского слона включает разнообразные растения: кору деревьев, листья, травы и корни. Одно животное может потреблять до 200 килограммов растительной пищи в день. Благодаря такому аппетиту, слоны играют ключевую роль в формировании ландшафта — они расчищают густые заросли, создавая новые тропы и водные пути, которыми пользуются другие животные.</p>
+
+                    <p style="margin-top: 15px;">Интеллект азиатских слонов поражает учёных. Они способны использовать предметы как инструменты, помнят места и сородичей на протяжении многих лет, а также демонстрируют признаки самосознания. Слоны общаются между собой с помощью инфразвуков — звуков, которые находятся ниже порога слышимости для человека, но которые позволяют им обмениваться информацией на расстояниях до нескольких километров.</p>
+
+                    <p style="margin-top: 15px;">К сожалению, популяция азиатских слонов в дикой природе сокращается. Главные угрозы — потеря среды обитания из-за вырубки лесов, браконьерство и конфликты с человеком. Международные организации и национальные заповедники предпринимают значительные усилия для защиты этих величественных животных. Создание коридоров дикой природы позволяет слонам мигрировать между защищенными территориями, поддерживая генетическое разнообразие популяций.</p>
+
+                    <p style="margin-top: 15px;">Программы эко-туризма в заповедниках играют важную роль в сохранении азиатских слонов. Они не только генерируют доход для защиты животных, но и повышают осведомленность людей о значимости этих существ в природных экосистемах. Каждый слон в заповеднике — уникальный индивидуум с собственной историей, личностью и семейными связями, что делает их сохранение не только экологической необходимостью, но и нравственным долгом человечества.</p>
+                </div>
+
+                <div class="rating-section">
+                    <h3>Оцените вашу удовлетворенность от прочтения статьи:</h3>
+                    <div class="rating-buttons">
+                        <button class="rating-btn" onclick="selectRating(this, 1)">1</button>
+                        <button class="rating-btn" onclick="selectRating(this, 2)">2</button>
+                        <button class="rating-btn" onclick="selectRating(this, 3)">3</button>
+                        <button class="rating-btn" onclick="selectRating(this, 4)">4</button>
+                        <button class="rating-btn" onclick="selectRating(this, 5)">5</button>
+                        <button class="rating-btn" onclick="selectRating(this, 6)">6</button>
+                        <button class="rating-btn" onclick="selectRating(this, 7)">7</button>
+                        <button class="rating-btn" onclick="selectRating(this, 8)">8</button>
+                        <button class="rating-btn" onclick="selectRating(this, 9)">9</button>
+                        <button class="rating-btn" onclick="selectRating(this, 10)">10</button>
+                    </div>
+                    <button class="submit-rating" id="submitRating1" onclick="submitRating(1)" disabled>
+                        Продолжить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARTICLE 2 PAGE -->
+        <div id="article2Page" class="page">
+            <div class="main-content">
+                <div class="article-header">
+                    <h2>Гиббоны в дикой природе</h2>
+                </div>
+
+                <iframe class="article-video" src="https://www.youtube.com/embed/5nRc8xzJ6Jk?start=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <div class="article-content">
+                    <p>Гиббоны — уникальные приматы, которые отличаются от других обезьян своей способностью совершать акробатические трюки в кронах деревьев. Эти маленькие, но ловкие животные весят всего от 4 до 13 килограммов и известны своей исключительной гибкостью и скоростью движения по ветвям. Гиббоны обитают в тропических лесах Юго-Восточной Азии, включая Таиланд, Малайзию, Индонезию и Вьетнам, где они проводят практически всю свою жизнь на деревьях.</p>
+
+                    <p style="margin-top: 15px;">Жизнь гиббонов организована вокруг моногамных пар, которые занимают определённую территорию в лесу и защищают её от других гиббонов. Каждый день начинается с громких вокализаций — их характерного пения, которое слышно на расстояниях до одного километра. Эти песни служат не только для обозначения территории, но и как средство коммуникации между членами семьи и способ укрепления парных связей.</p>
+
+                    <p style="margin-top: 15px;">Питание гиббонов состоит в основном из спелых фруктов — около 80% их рациона составляют плоды различных деревьев. Остальная часть рациона включает молодые листья, насекомых и яйца птиц. Благодаря своим длинным руками — размах которых может достигать 1,5 метров — гиббоны с лёгкостью достают фрукты из высоких ветвей, недоступных для других животных.</p>
+
+                    <p style="margin-top: 15px;">Ловкость гиббонов кажется нарушающей законы физики. Они способны совершать ползающие движения по тонким ветвям с поразительной скоростью, развивая на коротких дистанциях скорость до 55 километров в час. Такая мобильность позволяет им эффективно охотиться за фруктами и избегать хищников. Молодые гиббоны проводят первые годы жизни, изучая навыки лазания под руководством своих родителей.</p>
+
+                    <p style="margin-top: 15px;">Социальная структура гиббонов интересна и сложна. Семейные группы обычно состоят из родительской пары и 1-3 молодых особей. Молодые гиббоны остаются с родителями около 6-7 лет, после чего покидают территорию для поиска партнера. Это требует огромного мужества, так как молодому гиббону необходимо найти новую территорию и избежать встреч с хищниками на открытом пространстве между лесными участками.</p>
+
+                    <p style="margin-top: 15px;">Гиббоны играют важную роль в экосистеме тропических лесов, распространяя семена плодов, которыми они питаются. Однако популяции гиббонов находятся под угрозой из-за потери среды обитания и незаконной торговли дикими животными. В заповедниках Юго-Восточной Азии реализуются программы по восстановлению популяций и защиту оставшихся тропических лесов. Каждый спасённый гиббон — это победа в борьбе за сохранение биоразнообразия нашей планеты.</p>
+                </div>
+
+                <div class="rating-section">
+                    <h3>Оцените вашу удовлетворенность от прочтения статьи:</h3>
+                    <div class="rating-buttons">
+                        <button class="rating-btn" onclick="selectRating(this, 1)">1</button>
+                        <button class="rating-btn" onclick="selectRating(this, 2)">2</button>
+                        <button class="rating-btn" onclick="selectRating(this, 3)">3</button>
+                        <button class="rating-btn" onclick="selectRating(this, 4)">4</button>
+                        <button class="rating-btn" onclick="selectRating(this, 5)">5</button>
+                        <button class="rating-btn" onclick="selectRating(this, 6)">6</button>
+                        <button class="rating-btn" onclick="selectRating(this, 7)">7</button>
+                        <button class="rating-btn" onclick="selectRating(this, 8)">8</button>
+                        <button class="rating-btn" onclick="selectRating(this, 9)">9</button>
+                        <button class="rating-btn" onclick="selectRating(this, 10)">10</button>
+                    </div>
+                    <button class="submit-rating" id="submitRating2" onclick="submitRating(2)" disabled>
+                        Завершить исследование
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- THANK YOU PAGE -->
+        <div id="thankYouPage" class="page">
+            <div class="main-content thank-you">
+                <div class="emoji">🙏</div>
+                <h2>Спасибо за участие в исследовании!</h2>
+                <p>Ваши ответы помогли нам лучше понять, как визуальный контент влияет на восприятие информации.</p>
+                <p style="color: #999; font-size: 1em; margin-top: 30px;">Окно можно закрыть</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Заповедник дикой природы Юго-Восточной Азии | Исследовательский проект</p>
+    </footer>
+
+    <script>
+        // Переменные для хранения оценок
+        let article1Rating = null;
+        let article2Rating = null;
+
+        // Функция переключения страниц
+        function goToPage(pageId) {
+            // Скрыть все страницы
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Показать выбранную страницу
+            document.getElementById(pageId + 'Page').classList.add('active');
+            
+            // Отправить событие в Яндекс Метрику
+            if (window.ym) {
+                if (pageId === 'article1') {
+                    ym(00000000, 'reachGoal', 'article1_opened');
+                } else if (pageId === 'article2') {
+                    ym(00000000, 'reachGoal', 'article2_opened');
+                } else if (pageId === 'thankYou') {
+                    ym(00000000, 'reachGoal', 'research_completed');
+                }
+            }
+            
+            // Вернуться в начало страницы
+            window.scrollTo(0, 0);
+        }
+
+        // Функция выбора оценки
+        function selectRating(button, rating) {
+            // Получить контейнер кнопок
+            const container = button.parentElement;
+            
+            // Убрать класс selected со всех кнопок
+            container.querySelectorAll('.rating-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Добавить класс selected к нажатой кнопке
+            button.classList.add('selected');
+            
+            // Определить номер статьи по кнопке отправки
+            const submitButton = button.closest('.rating-section').querySelector('.submit-rating');
+            const articleNum = submitButton.id.includes('1') ? 1 : 2;
+            
+            // Сохранить оценку
+            if (articleNum === 1) {
+                article1Rating = rating;
+            } else {
+                article2Rating = rating;
+            }
+            
+            // Активировать кнопку отправки
+            submitButton.disabled = false;
+        }
+
+        // Функция отправки оценки
+        function submitRating(articleNum) {
+            const rating = articleNum === 1 ? article1Rating : article2Rating;
+            
+            if (rating === null) {
+                alert('Пожалуйста, выберите оценку');
+                return;
+            }
+            
+            // Отправить событие в Яндекс Метрику
+            if (window.ym) {
+                const goalName = articleNum === 1 ? 'rating_article1_' + rating : 'rating_article2_' + rating;
+                ym(00000000, 'reachGoal', goalName);
+            }
+            
+            // Переход на следующую страницу или благодарность
+            if (articleNum === 1) {
+                goToPage('article2');
+            } else {
+                goToPage('thankYou');
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        window.addEventListener('DOMContentLoaded', function() {
+            // Отправить начальный просмотр в Метрику
+            if (window.ym) {
+                ym(00000000, 'reachGoal', 'page_loaded');
+            }
+        });
+    </script>
+</body>
+</html>
